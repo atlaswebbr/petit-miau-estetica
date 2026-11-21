@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Petit Miau Estética Animal | Banho, Tosa &amp; Terapias • Alagoinhas - BA</title>
+  <meta name="description" content="Petit Miau Estética Animal em Alagoinhas - BA. Banho terapêutico, tosa na máquina ou tesoura, cromoterapia, hidratações e coloração na Av. Severino Vieira, 1395." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #090d16;
+    }
+    .petit-glow {
+      background: radial-gradient(circle at top center, rgba(6, 182, 212, 0.20), rgba(236, 72, 153, 0.12) 48%, transparent 78%);
+    }
+  </style>
+</head>
+<body class="text-slate-100 antialiased selection:bg-pink-500 selection:text-white">
+
+  <!-- CONFIGURAÇÃO OFICIAL & INTEGRAÇÃO GOOGLE SHEETS -->
+  <script>
+    const PETIT_CONFIG = {
+      nome: "Petit Miau Estética Animal",
+      instagram: "@petitmiauestetica",
+      instagramUrl: "https://www.instagram.com/petitmiauestetica/",
+      whatsappNumero: "5575988122242", // Número oficial da bio
+      telefoneFormatado: "(75) 98812-2242",
+      endereco: "Av. Severino Vieira, 1395 (Próx. Padaria Central) - Alagoinhas, BA",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Av.+Severino+Vieira,+1395,+Alagoinhas+-+BA",
+      horario: "Segunda a Sexta • 07h às 17h",
+      googleSheetsCsvUrl: "" // Cole aqui o link CSV publicado da planilha para atualizar serviços e valores sozinho
+    };
+  </script>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-40 bg-[#090d16]/90 backdrop-blur-xl border-b border-slate-800/80">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#topo" class="flex items-center gap-3">
+        <!-- Logo Circular Fiel à Identidade Petit Miau (Ciano + Rosa) -->
+        <div class="w-11 h-11 rounded-full bg-white border-2 border-cyan-400 shadow-lg shadow-pink-500/20 flex flex-col items-center justify-center shrink-0">
+          <div class="flex items-center gap-0.5 text-[11px] leading-none">
+            <span>🐶</span><span>🐱</span>
+          </div>
+          <span class="font-extrabold text-[8px] tracking-tight text-pink-600 uppercase mt-0.5">Petit Miau</span>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-extrabold text-sm text-white tracking-tight">Petit Miau</span>
+            <span class="text-[10px] font-bold bg-pink-500/20 text-pink-300 border border-pink-400/30 px-2 py-0.5 rounded-full">Estética Animal</span>
+          </div>
+          <span class="block text-[11px] text-cyan-300/80">Alagoinhas • BA</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2">
+        <a href="#servicos" class="hidden sm:inline-block text-xs font-semibold text-slate-300 hover:text-cyan-300 px-3 py-2 transition">
+          Serviços
+        </a>
+        <a href="#localizacao" class="hidden sm:inline-block text-xs font-semibold text-slate-300 hover:text-pink-300 px-3 py-2 transition">
+          Endereço
+        </a>
+        <button onclick="agendarGeral()"
+          class="bg-gradient-to-r from-cyan-500 to-pink-500 hover:from-cyan-400 hover:to-pink-400 text-white text-xs font-extrabold px-4 py-2.5 rounded-full shadow-lg shadow-pink-500/20 transition cursor-pointer">
+          Agendar Horário
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="topo" class="relative overflow-hidden pt-11 pb-14 px-4 border-b border-slate-800/80 petit-glow">
+    <div class="max-w-3xl mx-auto text-center space-y-5">
+      <div class="inline-flex items-center gap-2 bg-slate-900/90 border border-cyan-400/30 text-cyan-300 text-xs font-bold px-4 py-1.5 rounded-full">
+        <span>🐾 Estética Canina &amp; Bem-Estar</span>
+        <span class="text-slate-600">•</span>
+        <span class="text-pink-300">Cromoterapia &amp; Spa</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.12] text-white">
+        Carinho, estética e <span class="bg-gradient-to-r from-cyan-300 via-sky-300 to-pink-400 bg-clip-text text-transparent">cuidado terapêutico</span> para o seu pet.
+      </h1>
+
+      <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+        Do banho tradicional ao banho terapêutico com cromoterapia, hidratações e tosa na tesoura. Agende o horário do seu melhor amigo direto pelo WhatsApp.
+      </p>
+
+      <!-- Info Rápida -->
+      <div class="flex flex-wrap items-center justify-center gap-2.5 pt-1 text-xs">
+        <div class="bg-slate-900/90 border border-slate-800 px-3.5 py-2 rounded-xl text-slate-300">
+          ⏰ <strong class="text-white">Seg a Sex: 07h às 17h</strong>
+        </div>
+        <div class="bg-slate-900/90 border border-slate-800 px-3.5 py-2 rounded-xl text-slate-300">
+          📍 <strong class="text-white">Av. Severino Vieira, 1395</strong> (Próx. Padaria Central)
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+        <a href="#servicos" class="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-pink-500 hover:from-cyan-400 hover:to-pink-400 text-white font-extrabold text-sm px-7 py-3.5 rounded-2xl shadow-xl shadow-pink-500/20 transition">
+          Ver Tratamentos &amp; Banho ↓
+        </a>
+        <button onclick="agendarGeral()" class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold text-sm px-6 py-3.5 rounded-2xl transition cursor-pointer">
+          Agendar pelo WhatsApp →
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serviços & Tratamentos -->
+  <section id="servicos" class="py-12 px-4 max-w-5xl mx-auto">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+      <div>
+        <span class="text-xs font-extrabold uppercase tracking-widest text-pink-400">Menu de Estética Animal</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">Selecione o Porte do seu Pet</h2>
+        <p class="text-xs text-slate-400 mt-1">Escolha o porte abaixo e clique no tratamento desejado para agendar pelo WhatsApp.</p>
+      </div>
+
+      <!-- Seletor de Porte -->
+      <div class="inline-flex bg-slate-900 p-1 rounded-xl border border-slate-800 self-start">
+        <button onclick="selecionarPorte('Pequeno', this)" class="porte-btn bg-cyan-400 text-slate-950 text-xs font-extrabold px-3.5 py-2 rounded-lg transition cursor-pointer">
+          Porte Pequeno
+        </button>
+        <button onclick="selecionarPorte('Médio', this)" class="porte-btn text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-lg transition cursor-pointer">
+          Porte Médio
+        </button>
+        <button onclick="selecionarPorte('Grande', this)" class="porte-btn text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-lg transition cursor-pointer">
+          Porte Grande
+        </button>
+      </div>
+    </div>
+
+    <!-- Grid de Serviços -->
+    <div id="lista-servicos" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+  </section>
+
+  <!-- Localização & Horários -->
+  <section id="localizacao" class="py-12 px-4 border-t border-slate-800/80 bg-slate-950/60">
+    <div class="max-w-5xl mx-auto grid sm:grid-cols-2 gap-5">
+      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-cyan-400">Onde Estamos</span>
+        <h3 class="text-xl font-extrabold text-white">Av. Severino Vieira, 1395</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Próximo à Padaria Central • Alagoinhas - BA (CEP 48005-174). Ambiente preparado com segurança e carinho para receber o seu pet.
+        </p>
+        <div class="pt-2">
+          <a href="https://www.google.com/maps/search/?api=1&query=Av.+Severino+Vieira,+1395,+Alagoinhas+-+BA" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-cyan-300 text-xs font-bold px-4 py-2.5 rounded-xl transition">
+            📍 Abrir no Google Maps ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 space-y-3">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-pink-400">Horário de Atendimento</span>
+        <h3 class="text-xl font-extrabold text-white">Segunda a Sexta • 07h às 17h</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Agende com antecedência pelo WhatsApp <strong class="text-slate-200">(75) 98812-2242</strong> e acompanhe os ensaios temáticos no <strong class="text-slate-200">@petitmiauestetica</strong>.
+        </p>
+        <div class="flex flex-wrap gap-2 pt-2">
+          <button onclick="agendarGeral()"
+            class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-pink-500 hover:from-cyan-400 hover:to-pink-400 text-white text-xs font-extrabold px-4 py-2.5 rounded-xl transition cursor-pointer">
+            Agendar no WhatsApp →
+          </button>
+          <a href="https://www.instagram.com/petitmiauestetica/" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold px-4 py-2.5 rounded-xl transition">
+            Instagram Oficial ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 py-8 px-4 text-center text-xs text-slate-500">
+    <p><strong class="text-slate-300">Petit Miau Estética Animal</strong> • Av. Severino Vieira, 1395 — Alagoinhas, BA</p>
+    <p class="mt-1">Modelo de Página Exclusiva desenvolvido por <span class="text-cyan-400 font-semibold">Atlas Web</span></p>
+  </footer>
+
+  <script>
+    // SERVIÇOS REAIS DA BIO (Substituídos automaticamente se googleSheetsCsvUrl for preenchido)
+    let servicosDados = [
+      {
+        nome: "Banho Completo",
+        tag: "Higiene & Perfume",
+        descricao: "Banho com produtos dermatológicos suaves, limpeza de ouvidos, corte de unhas e secagem cuidadosa.",
+        precos: { Pequeno: "Consulte", Médio: "Consulte", Grande: "Consulte" },
+        icone: "🛁"
+      },
+      {
+        nome: "Banho Terapêutico",
+        tag: "Cuidado Dermatológico",
+        descricao: "Tratamento especial para peles sensíveis, alergias e recuperação da barreira cutânea com produtos específicos.",
+        precos: { Pequeno: "Consulte", Médio: "Consulte", Grande: "Consulte" },
+        icone: "🌿"
+      },
+      {
+        nome: "Tosa na Máquina ou Tesoura",
+        tag: "Estética Canina",
+        descricao: "Tosa higiênica, tosa da raça ou acabamento artesanal na tesoura respeitando o conforto do seu pet.",
+        precos: { Pequeno: "Consulte", Médio: "Consulte", Grande: "Consulte" },
+        icone: "✂️"
+      },
+      {
+        nome: "Cromoterapia Pet",
+        tag: "Bem-Estar & Calma",
+        descricao: "Sessão relaxante com luzes terapêuticas que ajudam a reduzir o estresse e a ansiedade durante o banho.",
+        precos: { Pequeno: "Consulte", Médio: "Consulte", Grande: "Consulte" },
+        icone: "🌈"
+      },
+      {
+        nome: "Hidratações Profundas",
+        tag: "Brilho & Maciez",
+        descricao: "Nutrição intensa dos fios para desembaraçar, devolver o brilho e deixar a pelagem sedosa por muito mais tempo.",
+        precos: { Pequeno: "Consulte", Médio: "Consulte", Grande: "Consulte" },
+        icone: "✨"
+      },
+      {
+        nome: "Coloração Pet Segura",
+        tag: "Estilo & Diversão",
+        descricao: "Tintura atóxica própria para animais, ideal para detalhes criativos, orelhas e rabinho sem agredir os pelos.",
+        precos: { Pequeno: "Consulte", Médio: "Consulte", Grande: "Consulte" },
+        icone: "🎨"
+      }
+    ];
+
+    let porteAtual = "Pequeno";
+
+    function renderizarServicos() {
+      const container = document.getElementById('lista-servicos');
+      container.innerHTML = '';
+
+      servicosDados.forEach(s => {
+        const valor = s.precos[porteAtual] || "Consulte";
+        const card = document.createElement('div');
+        card.className = 'bg-slate-900/90 border border-slate-800 hover:border-pink-400/50 rounded-2xl p-5 flex flex-col justify-between transition';
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-2xl">${s.icone || '🐾'}</span>
+              <span class="text-[10px] font-extrabold uppercase bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 px-2.5 py-0.5 rounded-full">${s.tag}</span>
+            </div>
+            <h3 class="text-base font-extrabold text-white">${s.nome}</h3>
+            <p class="text-xs text-slate-400 mt-1.5 leading-relaxed">${s.descricao}</p>
+          </div>
+
+          <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between gap-2">
+            <div>
+              <span class="block text-[10px] text-slate-500">Porte ${porteAtual}</span>
+              <span class="text-sm font-extrabold text-pink-300">${valor}</span>
+            </div>
+            <button onclick="agendarServico('${s.nome.replace(/'/g, "\\'")}')"
+              class="bg-slate-800 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-pink-500 text-white text-xs font-extrabold px-4 py-2.5 rounded-xl transition cursor-pointer">
+              Agendar →
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function selecionarPorte(porte, btn) {
+      porteAtual = porte;
+      document.querySelectorAll('.porte-btn').forEach(b => {
+        b.className = 'porte-btn text-slate-300 text-xs font-semibold px-3.5 py-2 rounded-lg transition cursor-pointer';
+      });
+      btn.className = 'porte-btn bg-cyan-400 text-slate-950 text-xs font-extrabold px-3.5 py-2 rounded-lg transition cursor-pointer';
+      renderizarServicos();
+    }
+
+    function agendarServico(nomeServico) {
+      const msg = `Olá *Petit Miau Estética Animal*! Vi o site de vocês e gostaria de agendar *${nomeServico}* para o meu pet (*Porte ${porteAtual}*). Quais horários têm disponíveis?`;
+      window.open("https://wa.me/" + PETIT_CONFIG.whatsappNumero + "?text=" + encodeURIComponent(msg), "_blank", "noopener,noreferrer");
+    }
+
+    function agendarGeral() {
+      const msg = `Olá *Petit Miau Estética Animal*! Vi a página de vocês e gostaria de agendar um horário para o meu pet (*Porte ${porteAtual}*).`;
+      window.open("https://wa.me/" + PETIT_CONFIG.whatsappNumero + "?text=" + encodeURIComponent(msg), "_blank", "noopener,noreferrer");
+    }
+
+    // INTEGRAÇÃO AUTOMÁTICA COM GOOGLE SHEETS (CSV)
+    async function carregarPlanilha() {
+      if (!PETIT_CONFIG.googleSheetsCsvUrl) return;
+      try {
+        const resp = await fetch(PETIT_CONFIG.googleSheetsCsvUrl);
+        const texto = await resp.text();
+        const linhas = texto.split('\n').slice(1).filter(l => l.trim() !== '');
+        if (linhas.length > 0) {
+          servicosDados = linhas.map(linha => {
+            const cols = linha.split(',');
+            return {
+              nome: (cols[0] || '').trim(),
+              tag: (cols[1] || 'Estética Animal').trim(),
+              descricao: (cols[2] || '').trim(),
+              precos: {
+                Pequeno: (cols[3] || 'Consulte').trim(),
+                Médio: (cols[4] || 'Consulte').trim(),
+                Grande: (cols[5] || 'Consulte').trim()
+              },
+              icone: '🐾'
+            };
+          });
+          renderizarServicos();
+        }
+      } catch (e) {
+        console.log('Usando lista local padrão.');
+      }
+    }
+
+    renderizarServicos();
+    carregarPlanilha();
+  </script>
+</body>
+</html>
